@@ -11,7 +11,11 @@ export default class SinglePostContainer extends Component {
 
     render() {
         const makeEditBar = () => {
-            
+            this.setState({editBar:true})
+        }
+
+        const hideEditBar = () => {
+            this.setState({editBar: false})
         }
 
         return (
@@ -19,7 +23,7 @@ export default class SinglePostContainer extends Component {
                 <h2 className='title'>{this.props.post.title}</h2>
                 <h3 className='author'>{this.props.post.author}</h3>
                 <p className='story'>{this.props.post.story}</p>
-                <EditPostButton post={this.props.post} />
+                <EditPostButton post={this.props.post} makeEditBar={makeEditBar} hideEditBar={hideEditBar} editBar={this.state.editBar} />
             </div>
         )
     }

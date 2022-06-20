@@ -1,25 +1,45 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Home from './components/Home';
+import Thread from './components/Thread';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends React.Component{
+  constructor(props) {
+    super(props)
+    this.state = {
+      genres: ['Fantasy', 'Sci-Fi','Journal'],
+      currentThread: null,
+      url: 'http://localhost:3333/posts/'
+    }
+  }
+
+  render() {
+    const goToThread = (thread) => {
+      this.setState({currentThread: thread})
+    }
+  
+    const goToHome = () => {
+      this.setState({currentThread: null})
+    }
+
+    return(
+      this.state.currentThread ?
+        <Thread
+          goToHome={goToHome}
+          className="thread"
+          thread={this.state.currentThread}
+          url={this.state.url} />
+        :
+        <Home
+          goToHome={goToHome}
+          goToThread={goToThread}
+          className="home"
+          genres={this.state.genres} />
+    )
+  }
 }
 
-export default App;
+
+//todo: put event listeners on genres: sends to threads page.
+//    titleCard to home page

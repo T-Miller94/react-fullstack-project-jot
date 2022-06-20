@@ -10,7 +10,7 @@ export default class App extends React.Component{
     this.state = {
       genres: ['Fantasy', 'Sci-Fi','Journal'],
       currentThread: null,
-      url: 'http://localhost:3333/posts/'
+      url: 'http://localhost:3333/posts'
     }
   }
 

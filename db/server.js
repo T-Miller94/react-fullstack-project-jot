@@ -39,7 +39,7 @@ app.post('/posts', async (req, res) => {
             VALUES($1, $2, $3, $4, $5)`,
             [genre, author, password, title, story]
             )
-            res.json(req.body)
+            res.send('Posted')
     } catch (error) {
         console.log(error.message)
         res.send(error.message)

@@ -6,7 +6,11 @@ export default class PostPopup extends Component {
         return (
             this.props.showPopup ?
                 <div className='postPopup'>
-                    <PopupForm closePopup={this.props.closePopup} />
+                    <PopupForm
+                        thread={this.props.thread}
+                        url={this.props.url}
+                        closePopup={this.props.closePopup}
+                        refresh={this.props.refresh} />
                 </div>
                 :
                 ''

@@ -18,9 +18,9 @@ export default class Thread extends Component {
     }
 
 componentDidMount() {
-    fetch(`${this.props.url}${this.props.thread}`)
-    .then((res) => res.json()) 
-    .then((data) => this.setState({postList: data, loading: false}))
+    fetch(`${this.props.url}/${this.props.thread}`)
+        .then((res) => res.json()) 
+        .then((data) => this.setState({postList: data, loading: false}))
 }
 
     render() {
@@ -30,6 +30,13 @@ componentDidMount() {
 
         const closePopup = () => {
             this.setState({hasPopup: false})
+        }
+
+        const postRefresh = async () => {
+            this.setState({loading: true})
+            fetch(`${this.props.url}/${this.props.thread}`)
+                .then((res) => res.json()) 
+                .then((data) => this.setState({postList: data, loading: false}))
         }
 
         const setCurrentPost = (post) => {
@@ -52,7 +59,12 @@ componentDidMount() {
                     <TitleCard goToHome={this.props.goToHome} />
                     <LocationCard thread={this.props.thread} returnToThread={returnToThread} />
                     <PostButton openPopup={openPopup} />
-                    <PostPopup showPopup={this.state.hasPopup} closePopup={closePopup} />
+                    <PostPopup
+                        thread={this.props.thread}
+                        url={this.props.url}
+                        showPopup={this.state.hasPopup}
+                        closePopup={closePopup}
+                        refresh={postRefresh} />
                     <PostContainer posts={this.state.postList} setPost={setCurrentPost} />
                 </div>
             )
@@ -60,8 +72,6 @@ componentDidMount() {
 }
 
 //todo:
-//  commit to github repo... -_-ni
-//  link post functionality
 //  build edit/delete functionality
 //  expand genre list
 //  style app

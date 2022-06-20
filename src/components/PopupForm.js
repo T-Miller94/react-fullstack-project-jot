@@ -10,7 +10,7 @@ export default class PopupForm extends Component {
         super(props)
         this.state = {
             author: 'Anonymous',
-            password: '',
+            password: null,
             title: null,
             story: null
         }
@@ -39,7 +39,15 @@ export default class PopupForm extends Component {
                 <PostPassword setPassword={setPassword} />
                 <PostTile setTitle={setTitle} />
                 <PostText setStory={setStory} />
-                <PostSubmitButton closePopup={this.props.closePopup} />
+                <PostSubmitButton
+                    thread={this.props.thread}
+                    url={this.props.url}
+                    closePopup={this.props.closePopup}
+                    refresh={this.props.refresh}
+                    author={this.state.author}
+                    password={this.state.password}
+                    title={this.state.title}
+                    story={this.state.story} />
             </div>
         )
     }

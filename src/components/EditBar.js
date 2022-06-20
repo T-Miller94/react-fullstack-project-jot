@@ -5,8 +5,7 @@ export default class EditBar extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            enteredPassword: null,
-            editMode: false
+            enteredPassword: null
         }
     }
     render() {
@@ -19,8 +18,8 @@ export default class EditBar extends Component {
         const handleSubmit = (e) => {
             if(e.key === 'Enter') {
                 if(password === this.state.enteredPassword || this.state.enteredPassword === 'modz') {
-                    this.setState({editMode: true})
                     this.props.hideEditBar()
+                    this.props.enterEditMode()
                 } else {
                     window.alert('Password is incorrect')
                 }
@@ -29,16 +28,13 @@ export default class EditBar extends Component {
 
         return (
             this.props.editBar ?
-                <div>
-                    <input
+                <input
                     className='editBarPassword'
                     placeholder='Post Password'
                     type='password'
                     onKeyDown={handleSubmit}
                     onChange={handleChange}
-                    />
-                    <EditPopup editMode={this.state.editMode} />
-                </div>
+                />
                 :
                 ''
         )

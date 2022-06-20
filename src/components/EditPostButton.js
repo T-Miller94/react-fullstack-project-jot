@@ -13,7 +13,11 @@ export default class EditPostButton extends Component {
         return (
             <div className='editButtonBar'>
                 <button className='editPost' onClick={handleClick} >Edit</button>
-                <EditBar editBar={this.props.editBar} post={this.props.post} hideEditBar={this.props.hideEditBar} />
+                <EditBar
+                    editBar={this.props.editBar}
+                    post={this.props.post}
+                    hideEditBar={this.props.hideEditBar}
+                    enterEditMode={this.props.enterEditMode} />
             </div>
             
         )

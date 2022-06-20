@@ -20,8 +20,9 @@ export default class SinglePostContainer extends Component {
             this.setState({editBar: false})
         }
 
+        const toggleEdit = !this.state.editMode
         const enterEditMode = () => {
-            this.setState({editMode: true})
+            this.setState({editMode: toggleEdit})
         }
 
         return (
@@ -36,6 +37,7 @@ export default class SinglePostContainer extends Component {
                     editBar={this.state.editBar}
                     enterEditMode={enterEditMode} />
                 <EditPopup
+                    toggleEditMode={enterEditMode}
                     post={this.props.post}
                     editMode={this.state.editMode}
                     url={this.props.url}

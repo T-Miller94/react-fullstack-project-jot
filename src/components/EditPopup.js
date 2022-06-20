@@ -44,6 +44,7 @@ export default class EditPopup extends Component {
                     <EditSubmitButton
                         url={this.props.url}
                         setPost={this.props.setPost}
+                        toggleEditMode={this.props.toggleEditMode}
                         post={this.props.post}
                         author={author}
                         title={title}

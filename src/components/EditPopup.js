@@ -10,26 +10,29 @@ export default class EditPopup extends Component {
             author: null,
             title: null,
             story: null,
-            password: null,
-            paswordCorrect: false
+            password: null
         }
     }
     render() {
         const handleAuthor = (e) => {
             this.setState({author : e.target.value})
         }
+        let author = this.state.author || this.props.post.author
 
         const handleTitle = (e) => {
             this.setState({title : e.target.value})
         }
+        let title = this.state.title || this.props.post.title
 
         const handleStory = (e) => {
             this.setState({story : e.target.value})
         }
+        let story = this.state.story || this.props.post.story
 
         const handlePassword = (e) => {
             this.setState({password : e.target.value})
         }
+        
 
         return (
             this.props.editMode ?
@@ -38,8 +41,15 @@ export default class EditPopup extends Component {
                     <input defaultValue={this.props.post.author} onChange={handleAuthor} />
                     <textarea defaultValue={this.props.post.story} onChange={handleStory} />
                     <input placeholder='Password' onChange={handlePassword} />
-                    <EditSubmitButton url={this.props.url} setPost={this.props.setPost} />
-                    <DeleteSubmitButton url={this.props.url} setPost={this.props.setPost} />
+                    <EditSubmitButton
+                        url={this.props.url}
+                        setPost={this.props.setPost}
+                        post={this.props.post}
+                        author={author}
+                        title={title}
+                        story={story}
+                        password={this.state.password} />
+                    <DeleteSubmitButton post={this.props.post} url={this.props.url} setPost={this.props.setPost} />
                 </div>
                 :
                 ''

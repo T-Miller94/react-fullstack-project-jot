@@ -49,9 +49,10 @@ app.post('/posts', async (req, res) => {
 app.patch('/posts/:id', async (req, res) => {
     let story = req.body.story
     let title = req.body.title
+    let author = req.body.author
     let id = req.params.id
     try {
-        await pool.query(`UPDATE posts SET story = $1, title = $2 WHERE id = $3`, [story, title, id])
+        await pool.query(`UPDATE posts SET story = $1, title = $2, author = $3 WHERE id = $4`, [story, title, author, id])
             res.json(req.body)
     } catch (error) {
         console.log(error.message)

@@ -35,7 +35,11 @@ export default class SinglePostContainer extends Component {
                     hideEditBar={hideEditBar}
                     editBar={this.state.editBar}
                     enterEditMode={enterEditMode} />
-                <EditPopup post={this.props.post} editMode={this.state.editMode} />
+                <EditPopup
+                    post={this.props.post}
+                    editMode={this.state.editMode}
+                    url={this.props.url}
+                    setPost={this.props.setPost} />
             </div>
         )
     }

@@ -53,7 +53,13 @@ componentDidMount() {
 
         return (
             this.state.currentPost ?
-                <SinglePost thread={this.props.thread} post={this.state.currentPost} returnToThread={returnToThread} goToHome={this.props.goToHome} />
+                <SinglePost
+                    thread={this.props.thread}
+                    post={this.state.currentPost}
+                    returnToThread={returnToThread}
+                    goToHome={this.props.goToHome}
+                    url={this.props.url}
+                    setPost={setCurrentPost} />
                 :
                 <div className='thread'>
                     <TitleCard goToHome={this.props.goToHome} />

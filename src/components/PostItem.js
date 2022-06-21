@@ -9,7 +9,9 @@ export default class PostItem extends Component {
         }
 
         return (
-            <div className='post' onClick={handleSetPost}>{this.props.post.title}</div>
+            <div className='post' onClick={handleSetPost}>
+                <h3>{this.props.post.title}</h3>
+            </div>
         )
     }
 }

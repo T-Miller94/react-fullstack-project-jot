@@ -1,13 +1,87 @@
+body {
+    background-color: purple;
+}
+
+.home {
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(navy, rgb(60, 60, 65));
+    border-radius: 7px;
+}
+
+.titleCard {
+    border-style: outset;
+    border-color: purple;
+    border-radius: 7px;
+    background-image: linear-gradient(rgb(103, 7, 103), rgb(60, 60, 65));
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
 .titleCard:hover {
     cursor: pointer;
+    background-image: linear-gradient(rgb(60, 60, 65), rgb(103, 7, 103));
+    box-shadow: 0px 0px 40px goldenrod;
+    border-style: inset;
+    color: goldenrod;
 }
 
-.genreItem:hover {
-    cursor: pointer;
+.locationCard {
+    border-style: outset;
+    border-color: purple;
+    border-radius: 7px;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
 }
-
 .locationCard:hover {
     cursor: pointer;
+    background-image: linear-gradient(rgb(60, 60, 65), rgb(103, 7, 103));
+    box-shadow: 0px 0px 40px goldenrod;
+    border-style: inset;
+    color: goldenrod;
+}
+
+.genres {
+    height: 400px;
+    width: 800px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(3, .3fr);
+    grid-template-rows: repeat(3, .3fr);
+    border-style: solid;
+    border-radius: 5px;
+    margin-top: 50px;
+    background-image: linear-gradient(rgb(60, 60, 65), rgb(103, 7, 103));
+    box-shadow: 0px 0px 30px ;
+}
+.genreItem {
+    margin: auto;
+    margin-top: 60px;
+    color: blueviolet;
+    
+}
+.genreItem:hover {
+    cursor: pointer;
+    color: rgb(63, 0, 108);
+    text-shadow: 0px 0px 20px yellow;
+}
+
+
+.thread {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.post {
+    border-style: hidden hidden ridge hidden;
 }
 
 .post:hover {

@@ -33,7 +33,7 @@ export default class PostSubmitButton extends Component {
         }
 
         return (
-            <button onClick={handleClick}>Submit</button>
+            <button className='postPopupSubmit' onClick={handleClick}>Submit</button>
         )
     }
 }

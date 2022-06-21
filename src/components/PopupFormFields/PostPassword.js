@@ -7,7 +7,7 @@ export default class PostPassword extends Component {
         }
 
         return (
-            <input type='text' placeholder='Password for this post' onChange={handleSetPassword} />
+            <input className='postPopupPassword' type='text' placeholder='Password for this post' onChange={handleSetPassword} />
         )
     }
 }

@@ -40,7 +40,7 @@ export default class EditPopup extends Component {
                     <input defaultValue={this.props.post.title} onChange={handleTitle} />
                     <input defaultValue={this.props.post.author} onChange={handleAuthor} />
                     <textarea defaultValue={this.props.post.story} onChange={handleStory} />
-                    <input placeholder='Password' onChange={handlePassword} />
+                    <input placeholder='Password' type='password' onChange={handlePassword} />
                     <EditSubmitButton
                         url={this.props.url}
                         setPost={this.props.setPost}

@@ -7,7 +7,7 @@ export default class PostTile extends Component {
         }
 
         return (
-            <input type='text' placeholder='Post Title' onChange={handleSetTitle} />
+            <input className='postPopupTitle' type='text' placeholder='Post Title' onChange={handleSetTitle} />
         )
     }
 }

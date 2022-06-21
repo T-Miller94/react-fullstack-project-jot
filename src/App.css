@@ -121,11 +121,55 @@ body {
     align-items: center;
 }
 .popupForm {
-    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 500px;
+    background-image: radial-gradient(dimgrey,  dimgrey, dimgrey, rgb(103, 7, 103));
     position: relative;
     padding: 32px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 15px;
 }
+.postPopupAuthor {
+    margin-bottom: 10px;
+}
+.postPopupPassword {
+    margin-bottom: 10px;
+}
+.postPopupTitle {
+    margin-bottom: 20px;
+}
+.postPopupTextarea {
+    height: 400px;
+    margin-bottom: 20px;
+}
+
+
+.singlePost{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(black, rgb(103, 7, 103), rgb(103, 7, 103), rgb(103, 7, 103));
+}
+.singlePostContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-style: solid;
+}
+
 
 button:hover {
     cursor: pointer;
+}
+textarea {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 525;
+    resize: none;
+    background-color: darkgrey;
+}
+input {
+    background-color: darkgrey;
 }

@@ -29,7 +29,9 @@ export default class SinglePostContainer extends Component {
             <div className='singlePostContainer'>
                 <h2 className='title'>{this.props.post.title}</h2>
                 <h3 className='author'>{this.props.post.author}</h3>
-                <p className='story'>{this.props.post.story}</p>
+                <div className='storyContainer'>
+                    <p className='story'>{this.props.post.story}</p>
+                </div>
                 <EditPostButton
                     post={this.props.post}
                     makeEditBar={makeEditBar}

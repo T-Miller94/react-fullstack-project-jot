@@ -7,7 +7,7 @@ export default class PostAuthor extends Component {
         }
 
         return (
-            <input type='text' placeholder='Pen-Name' onChange={handleSetAuthor} />
+            <input className='postPopupAuthor' type='text' placeholder='Pen-Name' onChange={handleSetAuthor} />
         )
     }
 }

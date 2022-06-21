@@ -7,7 +7,7 @@ export default class PostText extends Component {
         }
 
         return (
-            <textarea className='postText' placeholder='Your story here...' onChange={handleSetStory} />
+            <textarea className='postPopupTextarea' placeholder='Your story here...' onChange={handleSetStory} />
         )
     }
 }

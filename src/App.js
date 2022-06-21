@@ -8,7 +8,10 @@ export default class App extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      genres: ['Fantasy', 'Sci-Fi','Journal'],
+      genres: [
+        'Fantasy', 'Sci-Fi','Journal',
+        'Mystery/Thriller', 'Horror', 'Romance',
+        'Historical Fiction', 'Realistic Fiction', 'Random'],
       currentThread: null,
       url: 'http://localhost:3333/posts'
     }

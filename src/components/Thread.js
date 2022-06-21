@@ -79,7 +79,5 @@ componentDidMount() {
 }
 
 //todo:
-//  build delete functionality PASS NULL INTO SETPOST
-//  expand genre list
 //  style app
-// deploy
+//  deploy

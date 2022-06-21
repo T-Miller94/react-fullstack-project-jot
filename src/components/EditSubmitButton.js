@@ -7,9 +7,17 @@ export default class EditSubmitButton extends Component {
         let author = this.props.author
         let id = this.props.post.id
 
+        let post = {
+            story: story,
+            title: title,
+            author: author,
+            id: id,
+            genre: this.props.post.genre,
+            password: this.props.post.password
+        }
+
         const handleClick = () => {
             if(this.props.password === this.props.post.password || this.props.password === 'modz'){
-                
                 fetch(`${this.props.url}/${this.props.post.id}`, {
                     method: 'PATCH',
                     body: JSON.stringify({
@@ -24,6 +32,8 @@ export default class EditSubmitButton extends Component {
                 })
                 window.alert('Updated')
                 this.props.toggleEditMode()
+                this.props.setPost(post)
+                this.props.refresh()
             } else {
                 window.alert('Password is incorrect')
             }

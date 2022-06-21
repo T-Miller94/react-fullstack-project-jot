@@ -9,7 +9,11 @@ export default class SinglePost extends Component {
             <div className='singlePost'>
                 <TitleCard goToHome={this.props.goToHome} />
                 <LocationCard thread={this.props.thread} returnToThread={this.props.returnToThread} />
-                <SinglePostContainer post={this.props.post} url={this.props.url} setPost={this.props.setPost} />
+                <SinglePostContainer
+                    post={this.props.post}
+                    url={this.props.url}
+                    setPost={this.props.setPost}
+                    refresh={this.props.refresh} />
             </div>
         )
     }

@@ -41,7 +41,8 @@ export default class SinglePostContainer extends Component {
                     post={this.props.post}
                     editMode={this.state.editMode}
                     url={this.props.url}
-                    setPost={this.props.setPost} />
+                    setPost={this.props.setPost}
+                    refresh={this.props.refresh} />
             </div>
         )
     }

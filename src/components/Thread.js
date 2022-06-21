@@ -59,7 +59,8 @@ componentDidMount() {
                     returnToThread={returnToThread}
                     goToHome={this.props.goToHome}
                     url={this.props.url}
-                    setPost={setCurrentPost} />
+                    setPost={setCurrentPost}
+                    refresh={postRefresh} />
                 :
                 <div className='thread'>
                     <TitleCard goToHome={this.props.goToHome} />
@@ -78,7 +79,7 @@ componentDidMount() {
 }
 
 //todo:
-//  build edit/delete functionality
+//  build delete functionality PASS NULL INTO SETPOST
 //  expand genre list
 //  style app
 // deploy

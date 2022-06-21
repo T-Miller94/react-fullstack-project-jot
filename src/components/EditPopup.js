@@ -49,8 +49,15 @@ export default class EditPopup extends Component {
                         author={author}
                         title={title}
                         story={story}
-                        password={this.state.password} />
-                    <DeleteSubmitButton post={this.props.post} url={this.props.url} setPost={this.props.setPost} />
+                        password={this.state.password}
+                        refresh={this.props.refresh} />
+                    <DeleteSubmitButton
+                        post={this.props.post}
+                        url={this.props.url}
+                        setPost={this.props.setPost}
+                        password={this.state.password}
+                        refresh={this.props.refresh}
+                        toggleEditMode={this.props.toggleEditMode} />
                 </div>
                 :
                 ''

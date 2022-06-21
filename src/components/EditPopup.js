@@ -32,32 +32,42 @@ export default class EditPopup extends Component {
         const handlePassword = (e) => {
             this.setState({password : e.target.value})
         }
+
+        const handleClick = (e) => {
+            if(e.target.className === 'editModePopup') {
+                this.props.toggleEditMode()
+            }
+        }
         
 
         return (
             this.props.editMode ?
-                <div className='editModePopup'>
-                    <input defaultValue={this.props.post.title} onChange={handleTitle} />
-                    <input defaultValue={this.props.post.author} onChange={handleAuthor} />
-                    <textarea defaultValue={this.props.post.story} onChange={handleStory} />
-                    <input placeholder='Password' type='password' onChange={handlePassword} />
-                    <EditSubmitButton
-                        url={this.props.url}
-                        setPost={this.props.setPost}
-                        toggleEditMode={this.props.toggleEditMode}
-                        post={this.props.post}
-                        author={author}
-                        title={title}
-                        story={story}
-                        password={this.state.password}
-                        refresh={this.props.refresh} />
-                    <DeleteSubmitButton
-                        post={this.props.post}
-                        url={this.props.url}
-                        setPost={this.props.setPost}
-                        password={this.state.password}
-                        refresh={this.props.refresh}
-                        toggleEditMode={this.props.toggleEditMode} />
+                <div className='editModePopup' onClick={handleClick}>
+                    <div className='editModeForm'>
+                        <input className='editTitle' defaultValue={this.props.post.title} onChange={handleTitle} />
+                        <input className='editAuthor' defaultValue={this.props.post.author} onChange={handleAuthor} />
+                        <textarea className='editTextarea' defaultValue={this.props.post.story} onChange={handleStory} />
+                        <input className='editPassword' placeholder='Password' type='password' onChange={handlePassword} />
+                        <div className='editPopupButtonContainer'>
+                            <EditSubmitButton
+                                url={this.props.url}
+                                setPost={this.props.setPost}
+                                toggleEditMode={this.props.toggleEditMode}
+                                post={this.props.post}
+                                author={author}
+                                title={title}
+                                story={story}
+                                password={this.state.password}
+                                refresh={this.props.refresh} />
+                            <DeleteSubmitButton
+                                post={this.props.post}
+                                url={this.props.url}
+                                setPost={this.props.setPost}
+                                password={this.state.password}
+                                refresh={this.props.refresh}
+                                toggleEditMode={this.props.toggleEditMode} />
+                            </div>
+                    </div>
                 </div>
                 :
                 ''

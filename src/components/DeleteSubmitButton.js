@@ -18,7 +18,7 @@ export default class DeleteSubmitButton extends Component {
             }
         }
         return (
-            <button onClick={handleClick}>Delete</button>
+            <button className='deleteButton' onClick={handleClick}>Delete</button>
         )
     }
 }

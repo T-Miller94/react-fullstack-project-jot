@@ -40,7 +40,7 @@ export default class EditSubmitButton extends Component {
         }
 
         return (
-            <button onClick={handleClick}>Submit Edit</button>
+            <button className='editSubmitButton' onClick={handleClick}>Submit Edit</button>
         )
     }
 }

@@ -20,7 +20,7 @@ This app was written using React classical components because I had less familia
 
 I will revist this project in the future. Some updates to look out for:
 
-*Updated UX
-*Cleaner File Structure
-*Community Interaction Functionality (LIkes and Comments)
-*The Ability to search for post by user or title
++ Updated UX
++ Cleaner File Structure
++ Community Interaction Functionality (LIkes and Comments)
++ The Ability to search for post by user or title
